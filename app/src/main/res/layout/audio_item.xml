@@ -8,7 +8,8 @@
         android:id="@+id/imageView"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@tools:sample/avatars" />
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/jackboys" />
 
     <TextView
         android:id="@+id/nameSong"
@@ -36,12 +37,8 @@
         android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@android:drawable/btn_star" />
+        android:layout_alignParentRight="true"
 
-    <EditText
-        android:id="@+id/editTextTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="time" />
+
+        android:src="@drawable/baseline_bookmark_border_24" />
 </RelativeLayout>

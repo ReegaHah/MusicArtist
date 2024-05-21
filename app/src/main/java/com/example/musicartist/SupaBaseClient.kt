@@ -2,7 +2,9 @@ package com.example.musicartist
 
 import io.github.jan.supabase.createSupabaseClient
 import io.github.jan.supabase.gotrue.Auth
+import io.github.jan.supabase.gotrue.SessionSource
 import io.github.jan.supabase.postgrest.Postgrest
+import io.github.jan.supabase.storage.Storage
 
 class SupaBaseClient {
     val ClientSB = createSupabaseClient(
@@ -11,6 +13,7 @@ class SupaBaseClient {
     ) {
         install(Auth)
         install(Postgrest)
+        install(Storage)
         //install other modules
     }
 }

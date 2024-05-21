@@ -15,6 +15,9 @@
         android:theme="@style/Theme.MusicArtist"
         tools:targetApi="31">
         <activity
+            android:name=".Artist"
+            android:exported="false" />
+        <activity
             android:name=".main_menu"
             android:exported="false" />
         <activity

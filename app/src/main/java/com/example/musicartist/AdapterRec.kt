@@ -9,7 +9,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class AdapterRec(private val recList = ArrayList<DataPlaylist>(), private val context: Context): RecyclerView.Adapter<AdapterRec.ViewHolder>()
+class AdapterRec(private val recList: ArrayList<DataPlaylist>, private val context: Context
+): RecyclerView.Adapter<AdapterRec.ViewHolder>()
 {
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         var rec_text: TextView = itemView.findViewById(R.id.rec_text)
@@ -23,11 +24,17 @@ class AdapterRec(private val recList = ArrayList<DataPlaylist>(), private val co
 
     override fun onBindViewHolder(holder: AdapterRec.ViewHolder, position: Int) {
         val rec = recList[position]
-        holder.rec_text.text = rec.name
-        holder.imageView.setImageResource(rec.image)
+        holder.rec_text.text = rec.Наименование
+        holder.imageView.setImageDrawable(rec.image)
         holder.itemView.setOnClickListener {
-            val intent = Intent(context, MainActivity::class.java)
+            val intent = Intent(context, MainActivity::class.java).apply {
+                putExtra("id", rec.id)
+            }
+            context.startActivity(intent)
         }
     }
 
+    override fun getItemCount(): Int {
+        return recList.size
+    }
 }
